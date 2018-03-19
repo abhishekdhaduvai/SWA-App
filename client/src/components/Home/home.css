@@ -1,0 +1,122 @@
+/* Add your CSS here */
+*:focus {
+  outline: none;
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#root {
+  background-image: url(https://static.pexels.com/photos/417045/pexels-photo-417045.jpeg);
+  background-size: cover;
+}
+
+.flex {
+  display: flex;
+}
+
+.form {
+  background: #fafafa;
+  align-self: flex-start;
+  padding: 3em;
+  margin-left: 0.8em;
+  margin-top: 1.5vh;
+  border-radius: 1em;
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.1);
+}
+
+.airport--field, .other--field {
+  margin: 0.3em;
+  margin-left: 0;
+}
+
+.fieldName {
+  color: grey;
+}
+
+.airport input {  
+  width: 5em;  
+}
+
+.field {
+  font-size: 28px;
+  padding: 7px 10px;
+  font-weight: 700;
+  color: #3B61AB;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  line-height: 32px;
+  box-shadow: inset 0 1px 0 #F2F2F2;
+  border: 1px solid #D6D6DC;
+  border-top-color: #B4B4B8;
+  outline-width: 0;
+}
+
+.phone, .email, .other {
+  margin-top: 1em;
+}
+
+.other input {
+  width: 5em;
+}
+
+
+.phone input {
+  width: 286px;
+}
+
+.email input {
+  width: 286px;
+  font-size: 20px;
+}
+
+.submitButton button {
+  background-color: #3B61AB !important;
+}
+
+.description {
+  color: #fafafa;
+  padding: 1em;
+  margin-left: 3em;
+  position: relative;
+  animation: animatebottom 1.5s;
+  user-select: none;
+  text-shadow: 1px 0px 1px rgba(150, 150, 150, 1);
+}
+
+.description h1 {
+  font-size: 3em;
+  text-shadow: 1px 0px 1px rgba(150, 150, 150, 1);
+}
+
+@keyframes animatebottom {
+  from { bottom: -50px; opacity: 0}
+  to { bottom: 0; opacity: 1}
+}
+
+.CalendarDay__highlighted_calendar {
+  background: #3B61AB;
+  color: white;
+}
+
+.CalendarDay__selected_span, .CalendarDay__highlighted_calendar:hover, .CalendarDay__selected_span:hover {
+  background: #6981af;
+  color: white;
+  border: 1px solid #3B61AB;
+}
+
+.CalendarDay__selected, .CalendarDay__selected:active, .CalendarDay__selected:hover {
+  background: #3B61AB;
+  color: white;
+  border: 1px solid #3B61AB;
+}
+
+.DateInput_input__focused {
+  border-bottom: 2px solid #3B61AB;
+}

@@ -1,0 +1,18 @@
+/* Add your CSS here */
+*:focus {
+  outline: none;
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#root {
+  background-image: url(https://static.pexels.com/photos/417045/pexels-photo-417045.jpeg);
+  background-size: cover;
+}
