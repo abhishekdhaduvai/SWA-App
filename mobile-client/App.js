@@ -1,13 +1,39 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { 
+  StyleSheet, 
+  Text, 
+  View,
+  StatusBar 
+} from 'react-native';
+import { Constants } from 'expo';
+import { StackNavigator } from 'react-navigation';
+
+// Screens
+import Home from './screens/Home';
+
+function AppStatusBar({backgroundColor, ...props}){
+  return(
+    <View style={{backgroundColor, height: Constants.statusBarHeight}} >
+      <StatusBar translucent backgroundColor={backgroundColor} {...props} />
+    </View>
+  )
+}
+
+const MainNavigator = StackNavigator({
+  Home: { screen: Home },
+  initialRouteName: 'Home'
+}, {
+  navigationOptions: {
+    header: null
+  }
+})
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        <AppStatusBar backgroundColor={'#f8b332'} barStyle='light-content' />
+        <MainNavigator />
       </View>
     );
   }
@@ -16,8 +42,5 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
