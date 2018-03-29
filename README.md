@@ -1,5 +1,5 @@
 # SWA-App
 
 <p align="center">
-  <img src="https://i.imgur.com/n683PE2.png" />
+  <img src="https://i.imgur.com/BaijiYJ.png" />
 </p>
