@@ -24,6 +24,7 @@
     "react-native": "0.52.0",
     "react-native-calendar-select": "^0.1.2",
     "react-native-elements": "^1.0.0-beta3",
+    "react-native-radial-gradient": "^1.0.3",
     "react-navigation": "^1.5.8"
   }
 }

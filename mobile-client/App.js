@@ -32,7 +32,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <AppStatusBar backgroundColor={'#f8b332'} barStyle='light-content' />
+        <AppStatusBar backgroundColor={'#283450'} barStyle='light-content' />
         <MainNavigator />
       </View>
     );

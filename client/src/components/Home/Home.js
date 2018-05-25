@@ -14,6 +14,8 @@ import './home.css';
 import axios from 'axios';
 import Description from '../Description/Description';
 
+import debounce from 'lodash/debounce';
+
 class Home extends React.Component {
 
   state = {
@@ -104,6 +106,10 @@ class Home extends React.Component {
     this.submitForm();
   }
 
+  updateEmail = debounce((email) => {
+    this.setState({ email })
+  }, 1000);
+
   render(){
     const { 
       arriveAirport, 
@@ -134,6 +140,7 @@ class Home extends React.Component {
         onClick={e => this.setState({overwriteDialog: false})}
       />,
     ];
+
     return (
       <div style={styles.container}>
 
@@ -190,7 +197,8 @@ class Home extends React.Component {
               type="email" 
               className="field"
               value={email}
-              onChange={e => this.setState({email: e.target.value})} />
+              // onChange={e => this.setState({email: e.target.value})} />
+              onChange={e => this.updateEmail(e.target.value)} />
           </div>
 
           <div className='other flex'>

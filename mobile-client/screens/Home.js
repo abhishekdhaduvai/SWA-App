@@ -5,13 +5,16 @@ import {
   StyleSheet,
   Keyboard,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
+  Dimensions
 } from 'react-native';
 
 import {
   Button,
   Input
 } from 'react-native-elements';
+
+import { LinearGradient } from 'expo';
 
 import Form from '../components/Form';
 
@@ -21,6 +24,11 @@ class Home extends React.Component {
     return (
       <View style={styles.container}>
         <Form />
+        <LinearGradient 
+          style={styles.gradient}
+          colors={['transparent', '#262d48']}
+          start={[1, 0]}
+          end={[1, 1]} />
       </View>
     )
   }
@@ -29,10 +37,9 @@ class Home extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f8b332'
+    backgroundColor: '#3B61AB'
   },
-  input: {
-    color: '#3B61AB',
+  input: {    
     fontSize: 25,
     fontWeight: 'bold',
     padding: 10,
@@ -49,6 +56,15 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'white',
     textAlign: 'center'
+  },
+  gradient: {
+    zIndex: 1,
+    opacity: 0.9,
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    height: Dimensions.get('window').height,
   }
 })
 

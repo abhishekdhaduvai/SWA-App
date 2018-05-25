@@ -47,64 +47,92 @@ class Form extends React.Component {
     let minDate = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
 
     return (
-      <View>
-        
-        {/* Form View begins */}
-        <View style={styles.formContainer}>
+      <View style={styles.formContainer}>
+        {/* Origin Airport Input */}
 
-          {/* Origin Airport Input */}
-          <View id='airports' style={styles.airportsContainer}>
-            <View id='originAirport' style={{flex: 1}}>
-              <Text>Origin</Text>
-              <TextInput
-                value={this.state.originAirport} 
-                autoCapitalize='characters'
-                style={styles.input}
-                underlineColorAndroid='transparent'
-                maxLength={3}
-                onChange={e => this.updateOriginAirport(e.target.value)} />
-            </View>
+        <View id='originAirport'>
+          <Text style={{color: 'white', fontSize: 17}}  >FROM</Text>
+          <TextInput
+            value={this.state.originAirport} 
+            autoCapitalize='characters'
+            style={styles.input}
+            underlineColorAndroid='#28395f'
+            maxLength={3}
+            onChange={e => this.updateOriginAirport(e.target.value)} />
+        </View>
 
-            {/* Destination Airport Input */}
-            <View id='destinationAirport' style={{flex: 1}}>
-              <Text>Destination</Text>
-              <TextInput
-                value={this.state.originAirport} 
-                autoCapitalize='characters'
-                style={styles.input}
-                underlineColorAndroid='transparent'
-                maxLength={3}
-                onChange={e => this.updateOriginAirport(e.target.value)} />
-            </View>
-          </View>
+        {/* Destination Airport Input */}
+        <View id='destinationAirport'>
+          <Text style={{color: 'white', fontSize: 17}}>TO</Text>
+          <TextInput
+            value={this.state.originAirport} 
+            autoCapitalize='characters'
+            style={styles.input}
+            underlineColorAndroid='#28395f'
+            maxLength={3}
+            onChange={e => this.updateOriginAirport(e.target.value)} />
+        </View>
 
-          {/* Calendar */}
+        {/* Calendar */}
+        <View id='destinationAirport'>
+        <Text style={{color: 'white', fontSize: 17}}>DATES</Text>
           <TouchableOpacity 
             style={styles.input}
             onPress={this.openCalendar}>          
               {this.state.arriveDate.toString().length > 0 &&
-                <Text>
+                <Text style={{fontSize: 18, color: '#3B61AB'}}>
                   {this.state.departDate.toString()} - {this.state.arriveDate.toString()}
                 </Text>
               }
               {this.state.arriveDate.toString().length === 0 &&
-                <Text>
+                <Text style={{fontSize: 18, color: '#3B61AB'}}>
                   Touch Here to add your flight dates
                 </Text>
               }
           </TouchableOpacity>
-
-          <Calendar
-            i18n="en"
-            ref={(calendar) => {this.calendar = calendar;}}
-            color={color}
-            format="MM/DD/YYYY"
-            startDate={minDate}
-            onConfirm={this.confirmDate}
-          />
-
         </View>
-        {/* Form View ends here */}
+
+        <View id='destinationAirport'>
+          <Text style={{color: 'white', fontSize: 17}}>PASSENGERS</Text>
+          <TextInput
+            value={this.state.originAirport} 
+            autoCapitalize='characters'
+            style={styles.input}
+            underlineColorAndroid='#28395f'
+            maxLength={3}
+            onChange={e => this.updateOriginAirport(e.target.value)} />
+        </View>
+
+        <View id='destinationAirport'>
+          <Text style={{color: 'white', fontSize: 17}}>PHONE</Text>
+          <TextInput
+            value={this.state.originAirport} 
+            autoCapitalize='characters'
+            style={styles.input}
+            underlineColorAndroid='#28395f'
+            maxLength={3}
+            onChange={e => this.updateOriginAirport(e.target.value)} />
+        </View>
+
+        <View id='destinationAirport'>
+          <Text style={{color: 'white', fontSize: 17}}>EMAIL</Text>
+          <TextInput
+            value={this.state.originAirport} 
+            autoCapitalize='characters'
+            style={styles.input}
+            underlineColorAndroid='#28395f'
+            maxLength={3}
+            onChange={e => this.updateOriginAirport(e.target.value)} />
+        </View>
+
+        <Calendar
+          i18n="en"
+          ref={(calendar) => {this.calendar = calendar;}}
+          color={color}
+          format="MM/DD/YYYY"
+          startDate={minDate}
+          onConfirm={this.confirmDate}
+        />
 
         <Button 
           title='Create Alert'
@@ -117,18 +145,19 @@ class Form extends React.Component {
 
 const styles = StyleSheet.create({
   formContainer: {
-    backgroundColor: '#fafafa',
     padding: 10,
     margin: 10,
     borderRadius: 3,
-    elevation: 4
+    elevation: 4,
+    zIndex: 2,
   },
   input: {
     color: '#3B61AB',
     fontSize: 25,
-    fontWeight: 'bold',
+    fontWeight: '900',
     padding: 10,
     margin: 5,
+    marginLeft: 0,
     backgroundColor: 'white',
     borderWidth: 1,
     borderColor: '#D6D6DC',
@@ -137,11 +166,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#3B61AB',
     padding: 10,
     margin: 10,
-    borderRadius: 5
+    borderRadius: 5,
   },
-  airportsContainer: {
-    flexDirection: 'row'
-  }
 })
 
 export default Form;
